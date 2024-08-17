@@ -45,6 +45,12 @@ on:
         default: false
         type: boolean
 
+      ref_name:
+        description: 'Git ref (main, 5.7, sha)'
+        required: false
+        default: 'main'
+        type: string
+
 permissions:
   contents: read
 
@@ -66,12 +72,14 @@ jobs:
       - name: Checkout Cura repo
         uses: actions/checkout@v4
         with:
-          repository: Ultimaker/Cura
+          repository: Go3dInnovation/Go3dPrintPro
+          ref: ${{ inputs.ref_name }}
+          fetch-depth: 1
 
       - name: Checkout Cura-workflows repo
         uses: actions/checkout@v4
         with:
-          repository: Ultimaker/Cura-workflows
+          repository: Go3dInnovation/cura-workflows-2
           path: Cura-workflows
 
       - name: Setup Python and pip
