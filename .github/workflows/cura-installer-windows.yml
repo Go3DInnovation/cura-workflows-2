@@ -170,14 +170,14 @@ jobs:
 #        if: ${{ always() && ! inputs.conan_internal }}
 #        run: conan upload "*" -r cura --all -c
 
-      - name: Upload the installer msi
-        if: ${{ always() }}
-        uses: actions/upload-artifact@v4.3.3
-        with:
-          name: ${{steps.filename.outputs.INSTALLER_FILENAME }}-msi
-          path: |
-            dist/${{steps.filename.outputs.INSTALLER_FILENAME }}.msi
-          retention-days: 5
+      # - name: Upload the installer msi
+      #   if: ${{ always() }}
+      #   uses: actions/upload-artifact@v4.3.3
+      #   with:
+      #     name: ${{steps.filename.outputs.INSTALLER_FILENAME }}-msi
+      #     path: |
+      #       dist/${{steps.filename.outputs.INSTALLER_FILENAME }}.msi
+      #     retention-days: 5
 
       - name: Upload the installer exe
         if: ${{ always() }}
