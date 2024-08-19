@@ -72,7 +72,7 @@ jobs:
       - name: Checkout Cura repo
         uses: actions/checkout@v4
         with:
-          repository: Go3dInnovation/Go3dPrintPro
+          repository: Go3dInnovation/Go3dPrintPro58
           ref: ${{ inputs.ref_name }}
           fetch-depth: 1
 
